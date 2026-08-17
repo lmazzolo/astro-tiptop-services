@@ -434,7 +434,7 @@ print("EE:", ee)
 
 ✏️**Note:** `psf_ol_array`, `psf_dl_array`, and `psf1d_data` are already NumPy arrays — no `cpuArray` conversion needed. Only `sim.PSD` may reside on the GPU when CuPy is enabled.
 
-### Parameter sweep without re-reading the `.ini` file {#param-sweep}
+## 📍 Parameter sweep without re-reading the `.ini` file {#param-sweep}
 
 Since v1.5.1, `baseSimulation` passes its internal config dictionary (`my_data_map`) directly to P3 and MASTSEL on each run. This means you can modify any parameter in memory between calls — no file I/O on each iteration. Before v1.5.1, `fourierModel` re-read the `.ini` file on every call, so a clean in-memory sweep was not possible.
 
@@ -478,7 +478,7 @@ for za in zenith_angles:
 
 The same pattern works for any parameter in `my_data_map`, for example `sim.my_data_map['atmosphere']['Seeing']` or `sim.my_data_map['sources_HO']['NumberPhotons']`.
 
-### Class `baseSimulation` — constructor parameters {#baseSimulation}
+## 📍 Class `baseSimulation` — constructor parameters {#baseSimulation}
 
 ```python
 sim = baseSimulation(path2param, parametersFile, outputDir, outputFile, doConvolve=True, doPlot=False, 

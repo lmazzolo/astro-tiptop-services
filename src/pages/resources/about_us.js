@@ -49,7 +49,7 @@ const authors = [
     linkedin: "https://www.linkedin.com/in/guido-agapito-a2029339/",
     bio: "He is a senior researcher in the Adaptive Optics group at INAF – Osservatorio Astrofisico di Arcetri. An automation engineer by training, he specializes in the control, modeling, and simulation of dynamical systems, as well as data reduction. With over 10 years of experience in astronomical adaptive optics, he leads the numerical simulation team at Arcetri. He contributed to the design and commissioning of SOUL at the LBT and ERIS at the VLT. He is currently involved in several major projects, including MORFEO, MAVIS, and ANDES at the ELT. He is also the lead developer of PASSATA and a key contributor to TipTop and Specula."
   },
-  { name: "Carlo Felice Manara" },
+
   {
     name: "Arseniy Kuznetsov",
     role: "European Southern Observatory",
@@ -57,6 +57,12 @@ const authors = [
     linkedin: "https://www.linkedin.com/in/a-kuznetsov",
     bio: "Arseniy Kuznetsov is a postdoctoral researcher at the European Southern Observatory (ESO), where he has been working since 2020. He obtained his doctorate in 2024 and has nearly five years of experience in astronomical adaptive optics (AO), focusing on AO simulations and focal-plane wavefront retrieval. His expertise spans high-performance software development for optical simulations, computer graphics, and computer vision, as well as machine learning applications in astronomical instrumentation. He is one of the key contributors to the TipTop project."
   },
+   { name: "Carlo Felice Manara",
+    role: "European Southern Observatory",
+    email: "cmanara@eso.org",
+    linkedin: "https://www.linkedin.com/in/carlo-felice-manara-a7b41a16/",
+    bio: "Carlo F. Manara is a Staff Astronomer at the European Southern Observatory (ESO) in Garching. He is responsible for the implementation of the interface between TipTop and the ESO tools like p2/ObsPrep and the ETC."
+   },
   {
     name: "Benoit Neichel",
     role: "Laboratoire d'Astrophysique de Marseille",
@@ -88,11 +94,8 @@ const authors = [
 ];
 
 const getLastNameInitial = (fullName) => {
-  const parts = fullName.trim().split(' ');
-  if (parts.length >= 2) {
-    return parts[1].charAt(0).toUpperCase();
-  }
-  return parts[0].charAt(0).toUpperCase();
+  const parts = fullName.trim().split(/\s+/);
+  return parts[parts.length - 1].charAt(0).toUpperCase();
 };
 
 const groupByLastNameInitial = (list) => {
@@ -147,26 +150,22 @@ export default function AboutPage() {
             <h1 style={{ textAlign: 'center', marginTop: '0rem' }}>🪪 About us</h1>
             
             {sortedInitials.map(initial => (
-              <div key={initial} style={{ display: 'flex', marginBottom: '2rem' }}>
+              <div key={initial} style={{ marginBottom: '2rem' }}>
+                
                 <div style={{
-                  flexShrink: 0,
-                  width: '3rem',
                   fontSize: '2.5rem',
                   fontWeight: 'bold',
                   color: '#1b5083',
-                  marginRight: '1rem',
+                  marginBottom: '0.75rem',
                   userSelect: 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                 }}>
                   {initial}
                 </div>
-                <div style={{ flexGrow: 1 }}>
-                  {groupedAuthors[initial].map(author => (
-                    <AuthorCard key={author.name} {...author} />
-                  ))}
-                </div>
+
+                {groupedAuthors[initial].map(author => (
+                  <AuthorCard key={author.name} {...author} />
+                ))}
+
               </div>
             ))}
             
