@@ -271,6 +271,10 @@ const config = {
                 label: 'AO school',
                 to: 'resources/AO_school',
               },
+              {
+                label: 'MAVIS 2026 - Hands-On',
+                to: 'resources/mavis_2026',
+              },
                {
                 label: 'Internship Opportunities',
                 to: 'resources/internship_opportunities',

@@ -14,6 +14,7 @@ export default function ContactPage() {
                 <li style={{ marginBottom: '0.3rem' }}><Link to="/resources/references">📘 Key Publications & References</Link></li>
                 <li style={{ marginBottom: '0.3rem' }}><Link to="/resources/contributors">🔑 Contributors Area</Link></li>
                 <li style={{ marginBottom: '0.3rem' }}><Link to="/resources/AO_school">🔭 AO school</Link></li>
+                <li style={{ marginBottom: '0.3rem' }}><Link to="/resources/mavis_2026">✨ MAVIS 2026 - Hands-On</Link></li>
                 <li style={{ marginBottom: '0.3rem' }}><Link to="/resources/internship_opportunities">💼 Internship Opportunities</Link></li>
                 <li style={{ marginBottom: '1rem' }}><Link to="/resources/contact">📬 Contact</Link></li>
               </ul>
