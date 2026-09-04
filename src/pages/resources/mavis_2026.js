@@ -17,7 +17,7 @@ export default function MAVIS2026Page() {
   );
 
   const notebookUrlSelect = useBaseUrl(
-    'tutorials/MAVIS2026_TipTop_Select.ipynb'
+    'tutorials/MAVIS2026_TipTop_HandsOn_B.ipynb'
   );
 
   const iniUrlAsterism = useBaseUrl(
